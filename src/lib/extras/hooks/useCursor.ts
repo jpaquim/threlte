@@ -50,13 +50,6 @@ export const useCursor = (
   onPointerLeave: () => void
   hovering: Writable<boolean>
 } => {
-  const { pointerOverCanvas } = useThrelte()
-
-  const unsubscribePointerOverCanvas = pointerOverCanvas.subscribe((isPointerOverCanvas) => {
-    if (!isPointerOverCanvas) hovering.set(false)
-  })
-  onDestroy(unsubscribePointerOverCanvas)
-
   const hovering = writable(false)
   const onPointerEnter = () => {
     hovering.set(true)
@@ -74,9 +67,14 @@ export const useCursor = (
     }
   }
 
-  let el: HTMLElement = document.body
-  const rootCtx = useThrelte()
-  if (rootCtx && rootCtx.renderer) el = rootCtx.renderer.domElement
+  const { pointerOverCanvas } = useThrelte()
+  const unsubscribePointerOverCanvas = pointerOverCanvas.subscribe((isPointerOverCanvas) => {
+    if (!isPointerOverCanvas) hovering.set(false)
+  })
+  onDestroy(unsubscribePointerOverCanvas)
+
+  const { renderer } = useThrelte()
+  const el = renderer ? renderer.domElement : document.body
 
   const unsubscribeHovering = hovering.subscribe((isHovering) => {
     if (isHovering) {
