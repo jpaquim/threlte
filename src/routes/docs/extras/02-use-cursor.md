@@ -6,10 +6,8 @@ title: useCursor
 import Wrapper from '$examples/extras/use-cursor/Wrapper.svelte'
 </script>
 
-!!!module_summary title=useCursor|sourcePath=hooks/useCursor.ts|name=useCursor|from=threlte/extras|type=hook
+!!!module_summary title=useCursor|sourcePath=hooks/useCursor.ts|name=useCursor|from=threlte/extras|type=hook|needsContext=true
 A hook that sets the css cursor property according to the hover state of a mesh, so that you can give the user visual feedback.
-
-If a context is present, the cursor property will be set on the DOM element of the renderer, otherwise it will be set on the body element.
 
 <ExampleWrapper>
   <Wrapper />
