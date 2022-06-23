@@ -52,6 +52,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@dimforge/rapier3d-compat": "^0.8.1",
     "troika-three-text": "^0.46.4"
   },
   "exports": {

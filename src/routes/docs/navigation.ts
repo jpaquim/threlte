@@ -269,6 +269,12 @@ export const sidebar = {
         title: 'Edges',
         slug: '/docs/extras/components/01-edges'
       }
+    ],
+    Rapier: [
+      {
+        title: 'Getting Started',
+        slug: '/docs/rapier/getting-started'
+      }
     ]
   }
 }
