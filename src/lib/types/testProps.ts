@@ -95,8 +95,11 @@ assert<
     | 'scenes'
     | 'userData'
     | 'parser'
+    | 'materials'
+    | 'nodes'
   >
 >()
+
 assert<Equals<PropDefKeys<Group>, PropKeys<GroupProperties> | 'group'>>()
 assert<Equals<PropDefKeys<Mesh>, PropKeys<MeshProperties> | 'mesh'>>()
 assert<Equals<PropDefKeys<Object3D>, PropKeys<Object3DProperties> | 'object'>>()

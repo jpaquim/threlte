@@ -1,5 +1,5 @@
 <script lang="ts">
-  import RigidBody from '$lib/rapier/RigidBody.svelte'
+  import RigidBody from '$lib/rapier/components/RigidBody.svelte'
   import { RigidBodyType } from '@dimforge/rapier3d-compat'
   import { onDestroy } from 'svelte'
   import { BoxBufferGeometry, GridHelper, MeshStandardMaterial, PlaneBufferGeometry } from 'three'
@@ -37,9 +37,8 @@
 </Mesh>
 
 <Mesh
-  position={{ y: -5, z: 0.5 }}
-  rotation={{ x: -90 * DEG2RAD }}
-  geometry={new BoxBufferGeometry(10, 10, 2)}
+  position={{ y: -5, x: 2 }}
+  geometry={new BoxBufferGeometry(10, 2, 10)}
   material={new MeshStandardMaterial()}
 >
   <RigidBody type={RigidBodyType.Fixed} />
